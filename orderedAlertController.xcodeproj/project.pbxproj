@@ -15,6 +15,8 @@
 		29D389951EA4B3700012DC21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D389931EA4B3700012DC21 /* LaunchScreen.storyboard */; };
 		29D389A01EA4B3700012DC21 /* orderedAlertControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D3899F1EA4B3700012DC21 /* orderedAlertControllerTests.m */; };
 		29D389AB1EA4B3700012DC21 /* orderedAlertControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D389AA1EA4B3700012DC21 /* orderedAlertControllerUITests.m */; };
+		29D389BA1EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D389B91EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.m */; };
+		29D389BD1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D389BC1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		29D389A61EA4B3700012DC21 /* orderedAlertControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = orderedAlertControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D389AA1EA4B3700012DC21 /* orderedAlertControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderedAlertControllerUITests.m; sourceTree = "<group>"; };
 		29D389AC1EA4B3700012DC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29D389B81EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIAlertControllerPush.h"; sourceTree = "<group>"; };
+		29D389B91EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIAlertControllerPush.m"; sourceTree = "<group>"; };
+		29D389BB1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+UIAlertControllerPush.h"; sourceTree = "<group>"; };
+		29D389BC1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+UIAlertControllerPush.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				29D389891EA4B3700012DC21 /* AppDelegate.m */,
 				29D3898B1EA4B3700012DC21 /* ViewController.h */,
 				29D3898C1EA4B3700012DC21 /* ViewController.m */,
+				29D389B81EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.h */,
+				29D389B91EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.m */,
+				29D389BB1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.h */,
+				29D389BC1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.m */,
 				29D3898E1EA4B3700012DC21 /* Main.storyboard */,
 				29D389911EA4B3700012DC21 /* Assets.xcassets */,
 				29D389931EA4B3700012DC21 /* LaunchScreen.storyboard */,
@@ -277,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D3898D1EA4B3700012DC21 /* ViewController.m in Sources */,
+				29D389BA1EA4BA2D0012DC21 /* UIViewController+UIAlertControllerPush.m in Sources */,
+				29D389BD1EA4C0370012DC21 /* UIAlertController+UIAlertControllerPush.m in Sources */,
 				29D3898A1EA4B3700012DC21 /* AppDelegate.m in Sources */,
 				29D389871EA4B3700012DC21 /* main.m in Sources */,
 			);
