@@ -48,7 +48,38 @@
 }
 
 - (void)presentViewControllerInLIFO:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
+    NSMutableArray *stackControllers = [self getStackControllers];
+    
+    if (![stackControllers containsObject:(UIAlertController *)viewControllerToPresent]) {
+        [stackControllers addObject:(UIAlertController *)viewControllerToPresent];
+    }
+    
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        UIAlertController *alertController = [stackControllers lastObject];
+        if (alertController) {
+            
+            alertController.block = ^ {
+                dispatch_semaphore_signal(semaphore);
+            };
+            
+            dispatch_sync(dispatch_get_main_queue(), ^ {
+                [self presentViewController:alertController animated:flag completion:completion];
+            });
+            
+            [stackControllers removeObject:alertController];
+        }
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }];
+    
+    
+    NSOperation *lastOperation = [self getOperationQueue].operations.lastObject;
+    if (lastOperation) {
+        [operation addDependency:lastOperation];
+    }
+    [[self getOperationQueue] addOperation:operation];
 }
 
 - (NSOperationQueue *)getOperationQueue {
@@ -58,6 +89,15 @@
         queue = [[NSOperationQueue alloc] init];
     });
     return queue;
+}
+
+- (NSMutableArray *)getStackControllers {
+    static NSMutableArray<UIAlertController *> *controllers = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        controllers = [NSMutableArray array];
+    });
+    return controllers;
 }
 
 @end

@@ -29,10 +29,10 @@
     UIAlertController *controller4 = [UIAlertController alertControllerWithTitle:@"first test 4" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [controller4 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
-    [self presentAlertViewController:controller animated:YES type:UIAlertControllerPushFIFO completion:nil];
-    [self presentAlertViewController:controller2 animated:YES type:UIAlertControllerPushFIFO completion:nil];
-    [self presentAlertViewController:controller3 animated:YES type:UIAlertControllerPushFIFO completion:nil];
-    [self presentAlertViewController:controller4 animated:YES type:UIAlertControllerPushFIFO completion:nil];
+    [self presentAlertViewController:controller animated:YES type:UIAlertControllerPushLIFO completion:nil];
+    [self presentAlertViewController:controller2 animated:YES type:UIAlertControllerPushLIFO completion:nil];
+    [self presentAlertViewController:controller3 animated:YES type:UIAlertControllerPushLIFO completion:nil];
+    [self presentAlertViewController:controller4 animated:YES type:UIAlertControllerPushLIFO completion:nil];
 }
 
 
